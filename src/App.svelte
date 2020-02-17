@@ -1,24 +1,5 @@
 <script>
-  import { clients } from './stores/clients.stores.js';
+  import Clients from './Clients.svelte';
 </script>
 
-<main>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">nom</th>
-        <th scope="col">Achats</th>
-      </tr>
-    </thead>
-    <tbody>
-      {#each $clients as client}
-        <tr>
-          <td>{client.name}</td>
-          <td>
-            <a href="http://google.com">Achats</a>
-          </td>
-        </tr>
-      {/each}
-    </tbody>
-  </table>
-</main>
+<Clients />
