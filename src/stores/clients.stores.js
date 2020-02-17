@@ -1,7 +1,8 @@
 import { readable, writable, derived } from 'svelte/store';
+import { apiUrl } from '../config';
 
 export const clients = readable([], async function start(set) {
-  const res = await fetch('http://localhost:3000/clients', { method: 'GET' });
+  const res = await fetch(`${apiUrl}/clients`, { method: 'GET' });
   const clients = await res.json();
   if (res.ok) set(clients);
   else throw res;
@@ -10,7 +11,7 @@ export const clients = readable([], async function start(set) {
 });
 
 export const getClientsPurchases = async clientId => {
-  const res = await fetch(`http://localhost:3000/clients/${clientId}/purchases`);
+  const res = await fetch(`${apiUrl}/clients/${clientId}/purchases`);
   const purchases = await res.json();
   if (res.ok) return purchases;
   else throw res;
