@@ -1,11 +1,12 @@
 <script>
   import Clients from './Clients.svelte';
+  import Purchases from './Purchases.svelte';
   import { currentClient } from './stores/clients.stores';
 </script>
 
 <main>
   <Clients />
   {#if $currentClient}
-    <p>client courrant: {$currentClient.id_client}, {$currentClient.name}</p>
+    <Purchases currentClient={$currentClient} />
   {/if}
 </main>
