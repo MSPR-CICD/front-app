@@ -3,8 +3,8 @@
   import { currentClient } from './stores/clients.stores';
 </script>
 
-<table class="table">
-  <thead>
+<table class="table table-hover">
+  <thead class="thead-light">
     <tr>
       <th scope="col">Nom</th>
       <th scope="col">Achats</th>

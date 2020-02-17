@@ -3,8 +3,8 @@
 </script>
 
 {#if $clientPurchases}
-  <table class="table">
-    <thead>
+  <table class="table table-hover">
+    <thead class="thead-light">
       <tr>
         <th scope="col">Produit</th>
         <th scope="col">Prix HT</th>
