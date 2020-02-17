@@ -1,4 +1,4 @@
-import { readable } from 'svelte/store';
+import { readable, writable } from 'svelte/store';
 
 export const clients = readable([], async function start(set) {
   const res = await fetch('http://localhost:3000/clients', { method: 'GET' });
@@ -15,3 +15,5 @@ export const clientsPurchases = async clientId => {
   if (res.ok) return purchases;
   else throw res;
 };
+
+export const currentClient = writable(null);
